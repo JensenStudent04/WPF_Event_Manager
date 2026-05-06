@@ -1,0 +1,29 @@
+name: C# Workflow
+
+on:
+  push:
+   branches: ["main"]
+   
+  pull_request:
+   branches: ["main"]
+
+jobs:
+  build:
+
+   runs-on: windows-latest
+
+   steps:
+   
+     - name: Checkout Repository
+       uses: actions/checkout@v4
+     
+     - name: Setup .NET SDK
+       uses: actions/setup-dotnet@v4
+       with: 
+           dotnet-version: '10.0.x'
+           
+     - name: Restore Dependencies
+       run: Get-ChildItem -Filter *.csproj -Recurse | ForEach-Object { dotnet restore $_.FullName }
+       
+     - name: Build
+       run: Get-ChildItem -Filter *.csproj -Recurse | ForEach-Object { dotnet build $_.FullName --no-restore }
