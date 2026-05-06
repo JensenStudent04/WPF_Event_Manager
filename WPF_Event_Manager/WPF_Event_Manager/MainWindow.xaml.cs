@@ -20,5 +20,35 @@ namespace WPF_Event_Manager
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnFilterDepartment_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnDisplayAll_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnNeedsApproval_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSummary_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
