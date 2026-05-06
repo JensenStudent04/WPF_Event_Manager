@@ -14,6 +14,8 @@ namespace WPF_Event_Manager
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    ///  // Delegate
+    public delegate bool RegistrationCriteria(Registration registration);
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -23,6 +25,8 @@ namespace WPF_Event_Manager
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            // Create a Instance of Registration
+            Registration registration = new Registration();
 
         }
 
@@ -47,6 +51,34 @@ namespace WPF_Event_Manager
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        public void DisplayHeading(string heading)
+        {
+            string title = " " + heading + " ";
+            string stars = new string('*', title.Length);
+
+            txtOutput.AppendText("\n");
+            txtOutput.AppendText(stars);
+            txtOutput.AppendText(title);
+            txtOutput.AppendText(stars);
+        }
+
+        //Create a Method which clears textboxes and text
+        private void ClearTextFields()
+        {
+            txtOutput.Clear();
+            txtEmployeeName.Clear();
+            txtEventName.Clear();
+            txtFilterDepartment.Clear();
+            txtDaysAttending.Clear();
+            txtFee.Clear();
+
+        }
+
+        private void txtOutput_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }

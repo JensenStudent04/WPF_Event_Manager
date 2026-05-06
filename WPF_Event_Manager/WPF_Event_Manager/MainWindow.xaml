@@ -158,7 +158,7 @@
                              TextWrapping="Wrap"
                              VerticalScrollBarVisibility="Auto"
                              BorderThickness="0"
-                             Background="White"/>
+                             Background="White" TextChanged="txtOutput_TextChanged"/>
                 </Border>
 
                 <!-- Button Section -->
